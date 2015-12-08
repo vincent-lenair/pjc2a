@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0" metadata-complete="true">
+	<display-name>pjc2a</display-name>
+
+	<distributable />
+
+	<env-entry>
+		<env-entry-name>ClientStateSavingPassword</env-entry-name>
+		<env-entry-type>java.lang.String</env-entry-type>
+		<env-entry-value>Jaun35</env-entry-value>
+	</env-entry>
+
+	<context-param>
+		<param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+		<param-value>client</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>com.sun.faces.numberOfViewsInSession</param-name>
+		<param-value>2</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>com.sun.faces.numberOfLogicalViews</param-name>
+		<param-value>1</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
+		<param-value>2</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>com.sun.faces.resourceUpdateCheckPeriod</param-name>
+		<param-value>5</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>com.sun.faces.enableMissingResourceLibraryDetection</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.PROJECT_STAGE</param-name>
+		<param-value>Development</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<description>Permet d'éviter que les commentaires HTML ne soient rendus</description>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>javax.faces.CONFIG_FILES</param-name>
+		<param-value>/WEB-INF/config/faces-config.xml</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>com.ocpsoft.pretty.CONFIG_FILES</param-name>
+		<param-value>/WEB-INF/config/pretty-config.xml</param-value>
+	</context-param>
+
+	<!-- Filtres d'encoding -->
+	<filter>
+		<filter-name>FiltreUTF8</filter-name>
+		<filter-class>fr.adp.socle.webapp.filter.EncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+
+	<!-- Filter pour Pretty Faces -->
+	<filter>
+		<filter-name>Pretty Filter</filter-name>
+		<filter-class>com.ocpsoft.pretty.PrettyFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>FiltreUTF8</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>XSSProtectServletFilter</filter-name>
+		<servlet-name>Faces Servlet</servlet-name>
+	</filter-mapping>
+
+	<filter>
+		<filter-name>XSSProtectServletFilter</filter-name>
+		<filter-class>fr.adp.socle.webapp.filter.xssprotect.XSSProtectServletFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>Pretty Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+
+	<!-- Servlet JSF -->
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+
+	<!-- Catch les erreurs -->
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/oups</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/oups</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/oups</location>
+	</error-page>
+
+	<!-- Page d'accueil (utilisée en dev) -->
+	<welcome-file-list>
+		<welcome-file>accueil.jsf</welcome-file>
+	</welcome-file-list>
+</web-app>

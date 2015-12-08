@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" [
+    <!ENTITY LOG_DIR                        "${conf.log.pathdir}">
+    <!ENTITY MAX_SIZE                       "10MB">
+    <!ENTITY MAX_BACKUP                     "5">
+
+    <!ENTITY APPEND                         "true">
+
+    <!ENTITY LOCAL_APPENDER                 "console">
+    <!ENTITY SYSLOG_FACILITY                "local3">
+
+    <!ENTITY PROJECT_THRESHOLD              "INFO">
+    <!ENTITY SYSLOG_THRESHOLD               "INFO">
+
+    <!ENTITY PROJECT_NAME                   "pjc2a-${project.version}">
+    <!ENTITY CONVERSION_ROOT_PATTERN        ";&PROJECT_NAME;;ReqId:&#x25;X{X-PJ-REQUEST-ID};&#x25;d{ISO8601};&#x25;-5p;&#x25;c{1};&#x25;m&#x25;n">
+    <!ENTITY CONVERSION_CONSOLE_PATTERN     "&#x25;d{ISO8601};&#x25;-5p;&#x25;c{1};&#x25;m&#x25;n">
+]>
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <!-- ===================================================================== -->
+    <!-- Log4j Configuration -->
+    <!-- ===================================================================== -->
+
+    <!-- ********************************************************************* -->
+    <!-- appenders -->
+
+    <appender name="root" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="&LOG_DIR;/&PROJECT_NAME;-root.log" />
+        <param name="maxBackupIndex" value="&MAX_BACKUP;" />
+        <param name="maxFileSize" value="&MAX_SIZE;" />
+        <param name="append" value="&APPEND;" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="&CONVERSION_ROOT_PATTERN;" />
+        </layout>
+    </appender>
+
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="&CONVERSION_CONSOLE_PATTERN;" />
+        </layout>
+    </appender>
+
+    <!-- ********************************************************************* -->
+    <!-- loggers -->
+    <logger name="fr.pjc2a">
+        <level value="&PROJECT_THRESHOLD;" />
+    </logger>
+
+    <logger name="org.hibernate">
+        <level value="&PROJECT_THRESHOLD;" />
+    </logger>
+
+    <logger name="org.springframework">
+        <level value="&PROJECT_THRESHOLD;" />
+    </logger>
+
+    <root>
+        <!-- all|debug|info|warn|error|fatal|off|null -->
+        <priority value="&SYSLOG_THRESHOLD;" />
+        <appender-ref ref="&LOCAL_APPENDER;" />
+    </root>
+
+</log4j:configuration>

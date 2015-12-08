@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="/WEB-INF/xhtml/template/commun.xhtml">
+	<ui:param name="pageTitle" value="Services aux particuliers"/>
+	<ui:param name="pageType" value="SERVICE"/>
+	<ui:define name="main">
+        <div class="row">
+          	<div class="twelve columns">
+            	<div class="mod modSectionHeader">
+              		<h2>Particuliers</h2>
+            	</div>
+          	</div>
+        </div>
+        <div class="row">
+          	<div class="twelve columns">
+            	<p>
+              		Vous avez envie de mettre de l’ordre dans vos papiers mais vous ne savez pas par où commencer ?<br/>
+					Pour vous les démarches auprès des administrations relèvent du véritable « casse-tête » ?<br/>
+					Votre travail ne vous laisse pas le temps d’effectuer vos démarches ?<br/>
+					PJC2A est là pour vous aider, vous conseiller en vous proposant un accompagnement personnalisé<br/>
+					Je me déplace avec vous ou pour vous représenter dans les bureaux de l’administration ou des organismes concernés<br/>
+             	</p>
+          	</div>
+        </div>
+        <div class="row">
+          	<div class="twelve columns">
+            	<div class="spacing"></div>
+          	</div>
+        </div>
+        <div class="row">
+          	<div class="three columns">
+            	<div class="color-1 mod modService">
+              		<div class="icon_title">
+                		<img alt="" width="64" height="64" src="#{env['root.path']}/statics/images/service/computer_white.png"/>
+                		<h3>Vie quotidienne</h3>
+              		</div>
+              		<p>
+              			Je vous aide à trier et classer vos papiers et je vous conseille pour une meilleure organisation et gestion.<br/>
+              			En mettant en place des rappels d’échéances, en organisant vos déplacements et en vous assistant dans vos démarches je vous facilite votre quotidien.
+					</p>
+            	</div>
+          	</div>
+          	<div class="three columns">
+            	<div class="color-2 mod modService">
+              		<div class="icon_title">
+                		<img alt="" width="64" height="64" src="#{env['root.path']}/statics/images/service/cog_white.png"/>
+                		<h3>Demarches</h3>
+             		</div>
+              		<p>
+              			Je vous propose une aide dans vos démarches auprès des administrations et organismes divers dans des domaines tels que travaux, permis de construire, état-civil, changement d’adresse ...<br/>
+              			Je peux vous assister pour l’ouverture ou la résiliation de vos contrats, la mise en place de prélèvements ou vos déclarations de sinistres.
+					</p>
+            	</div>
+          	</div>
+          	<div class="three columns">
+            	<div class="color-1 mod modService">
+              		<div class="icon_title">
+                		<img alt="" width="64" height="64" src="#{env['root.path']}/statics/images/service/sign_post_white.png"/>
+                		<h3>Administratif</h3>
+              		</div>
+              		<p>
+              			Je vous conseille pour rédiger vos courriers, cv, lettre de motivation, thèse ou mémoire.<br/>
+              			Je peux aussi vous aider à remplir vos formulaires et à constituer vos dossiers.
+					</p>
+				</div>
+          	</div>
+          	<div class="three columns">
+            	<div class="color-2 mod modService">
+              		<div class="icon_title">
+                		<img alt="" width="64" height="64" src="#{env['root.path']}/statics/images/service/chart_white.png"/>
+                		<h3>Divers</h3>
+              		</div>
+              		<p>
+              			Pour vous, je peux faire des recherches thématiques sur internet, des recherches généalogiques ou assurer la relecture et la correction de vos documents.<br/>
+              			Je vous propose également une aide aux devoirs ou un accompagnement dans l’apprentissage de la langue française.
+					</p>
+            	</div>
+          	</div>
+        </div>
+	</ui:define>
+</ui:composition>
+</html>

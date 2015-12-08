@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+	<ui:composition>
+      		<div class='top-section'>
+        		<div class='mod modHeader'>
+          			<div class='mod modTopBar'>
+            			<div class='row'>
+              				<div class='twelve columns'>
+                				<div class='top-bar-content'>
+                  					<div class='contact-phone'>
+                    					<i class='icon-phone'></i>
+                   						Téléphone : #{appBean.phoneNumber}
+                  					</div>
+                  					<div class='contact-email'>
+                    					<i class='icon-mail'></i>
+                    					<a href="mailto:#{appBean.mailAdress}">Email: #{appBean.mailAdress}</a>
+                  					</div>
+               						<div class='social'>
+                    					<div class='mod modSocial top-social'>
+                      						<ul>
+                        						<li class='icon-gplus'><a target="_blank" href="https://plus.google.com/u/1/b/109659888264181040167/109659888264181040167/posts"></a></li>
+                        						<li class='icon-facebook'><a target="_blank" href="https://www.facebook.com/pages/PJ-C2A/226006504252626"></a></li>
+						                        <li class='icon-linkedin'><a target="_blank" href="http://www.linkedin.com/profile/view?id=320394780"></a></li>
+						                        <li class='icon-vimeo'><a target="_blank" href="http://fr.viadeo.com/fr/profile/pascale.jan"></a></li>
+                      						</ul>
+                    					</div>
+                  					</div>
+                				</div>
+              				</div>
+           				</div>
+          			</div>
+          			<div class='row'>
+            			<div class='twelve columns'>
+              				<div class='black-line'></div>
+            			</div>
+          			</div>
+          			<div class='main-header'>
+            			<div class='row'>
+              				<div class='twelve columns'>
+                				<div class='mod modLogo'>
+                					<a href="#{env['root.path']}">
+                 						<img alt="PJ C2A" src="#{env['root.path']}/statics/images/logo_h_big_color_1.png"/>
+                 					</a>
+                				</div>
+                				<ui:include src="/WEB-INF/xhtml/menu.xhtml"/>
+              				</div>
+            			</div>
+          			</div>
+        		</div>
+      		</div>
+	</ui:composition>
+</html>

@@ -1,0 +1,155 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>fr.adp.parent</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.1</version>
+	</parent>
+	<groupId>fr.pjc2a.site</groupId>
+	<artifactId>pjc2a</artifactId>
+	<version>1.0.0</version>
+	<packaging>war</packaging>
+	<name>pjc2a</name>
+
+	<scm>
+		<connection>scm:svn:svn://svn-interne-virtuelle/pjc2a/trunk</connection>
+	</scm>
+
+	<!-- Gestion des versions pour les dependances communes -->
+	<properties>
+
+		<tagBase>svn://svn-interne-virtuelle/pjc2a/tags</tagBase>
+		<version.java.mail>1.4.7</version.java.mail>
+		<version.socle-webapp-jsf>1.0.0</version.socle-webapp-jsf>
+		<version.socle-file>1.0.0</version.socle-file>
+	</properties>
+
+	<dependencies>
+
+		<!-- ============================================================== -->
+		<!-- DEPENDENCES DE COMPILE -->
+		<!-- ============================================================== -->
+
+		<!-- Socle -->
+		<dependency>
+			<groupId>fr.adp.socle</groupId>
+			<artifactId>socle-file</artifactId>
+			<version>${version.socle-file}</version>
+		</dependency>
+		<dependency>
+			<groupId>fr.adp.socle</groupId>
+			<artifactId>socle-webapp-jsf</artifactId>
+			<version>${version.socle-webapp-jsf}</version>
+		</dependency>
+
+		<!-- Java Mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>${version.java.mail}</version>
+		</dependency>
+
+
+		<!-- J2EE 6 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${version.servlet-api}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${version.jsp-api}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>${version.el-api}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<wtpContextName>pjc2a</wtpContextName>
+					<wtpmanifest>true</wtpmanifest>
+					<wtpapplicationxml>true</wtpapplicationxml>
+					<wtpversion>2.0</wtpversion>
+					<additionalProjectFacets>
+						<jst.jsf>2.0</jst.jsf>
+						<jst.web>3.0</jst.web>
+					</additionalProjectFacets>
+				</configuration>
+			</plugin>
+
+			<!-- Déactive le deploiement du war de la webapp de test -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webResources>
+						<resource>
+							<directory>src/main/webapp</directory>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+					<!-- On exclu les confs dans le war -->
+					<packagingExcludes>WEB-INF/lib/conf-*.jar</packagingExcludes>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<app.root.path>http://localhost:8080/pjc2a</app.root.path>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<app.root.path>http://www.pjc2a.fr</app.root.path>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<app.root.path>http://pjc2a.test.lenair.fr</app.root.path>
+			</properties>
+		</profile>
+	</profiles>
+</project>

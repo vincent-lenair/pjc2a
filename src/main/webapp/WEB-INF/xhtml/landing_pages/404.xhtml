@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="/WEB-INF/xhtml/template/commun.xhtml">
+	<ui:define name="main">
+		<div class="row">
+			<div class="twelve columns">
+            	<p class="text-center">
+            		<h:graphicImage alt="" width="297" height="297" value="#{env['root.path']}/statics/images/404.png" />
+           		</p>
+            	<p class="text-center">
+					La page demandée n'existe pas.
+            	</p>
+            	<p class="text-center">
+              		A la place dirigez vous vers <a href="#{env['root.path']}">ma page d'accueil</a>, ou bien <a href="#{env['root.path']}/contact">contactez moi !</a>
+            	</p>
+          	</div>
+        </div>
+	</ui:define>
+</ui:composition>
+</html>

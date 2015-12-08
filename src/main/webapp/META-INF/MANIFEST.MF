@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Class-Path: socle-file-1.0.0.jar commons-fileupload-1.2.2.jar commons-
+ compress-1.4.1.jar xz-1.0.jar commons-io-2.4.jar socle-core-1.0.0.jar
+  socle-lang-1.0.0.jar commons-lang3-3.1.jar commons-validator-1.4.0.j
+ ar commons-beanutils-1.8.3.jar commons-logging-1.1.1.jar commons-dige
+ ster-1.8.jar commons-collections-3.2.1.jar log4j-1.2.16.jar commons-c
+ onfiguration-1.9.jar commons-lang-2.6.jar spring-core-3.2.0.RELEASE.j
+ ar spring-context-3.2.0.RELEASE.jar spring-aop-3.2.0.RELEASE.jar aopa
+ lliance-1.0.jar spring-beans-3.2.0.RELEASE.jar spring-expression-3.2.
+ 0.RELEASE.jar javax.inject-1.jar socle-webapp-jsf-1.0.0.jar socle-web
+ app-1.0.0.jar spring-web-3.2.0.RELEASE.jar omnifaces-1.4.1.jar javax.
+ faces-2.2.0.jar prettyfaces-jsf2-3.3.3.jar mail-1.4.7.jar activation-
+ 1.1.jar jstl-1.2.jar
+

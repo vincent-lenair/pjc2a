@@ -1,0 +1,119 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="/WEB-INF/xhtml/template/commun.xhtml">
+	<ui:param name="pageTitle" value="Tarifs"/>
+	<ui:param name="pageType" value="TARIF"/>
+	<ui:define name="main">
+		<div class="row">
+          	<div class="twelve columns">
+            	<h2 class="text-center">Honoraires</h2>
+            	<p class="text-center">
+            		Pour une intervention de qualité et répondant au plus juste à votre demande, je vous propose un 1er rendez-vous gratuit (sur site ou par téléphone) pour définir ensemble vos attentes et convenir de ma mission.<br />
+					Chaque demande sera étudiée avec le plus grand soin et fera l’objet d’un devis personnalisé et gratuit.<br />Les tarifs sont indiqués hors TVA.<br />
+ 			</p>
+          	</div>
+        </div>
+        <div class="spacing"></div>
+        <div class="row">
+          	<div class="four columns">
+            	<div class="mod modPriceBox">
+              		<div class="info">
+                		<p class="level">A l'heure</p>
+                		<p class="desc">&#160;</p>
+                		<p class="price">
+                  			<span class="number">27</span>
+                  			<span class="dollar">€</span>
+                  			<br/>
+                  			possibilité de forfait
+                		</p>
+              		</div>
+              		<div class="features">
+	                	<ul>
+							<li>Tous types de prestations</li>
+	                	</ul>
+					</div>
+              		<p class="start"><a class="button" href="#{env['root.path']}/contact">Demander un devis</a></p>
+            	</div>
+			</div>
+			<div class="four columns">
+            	<div class="mod modPriceBox">
+              		<div class="info">
+                		<p class="level">Au forfait</p>
+                		<p class="desc">intervention ponctuelle</p>
+                		<p class="price">
+                  			<span class="number">105</span>
+                  			<span class="dollar">€</span>
+                  			<br/>
+                  			la 1/2 journée
+                		</p>
+              		</div>
+              		<div class="features">
+	                	<ul>
+							<li>la 1/2 journée : 105€</li>
+							<li>la journée : 180€</li>
+	                	</ul>
+					</div>
+              		<p class="start"><a class="button" href="#{env['root.path']}/contact">Demander un devis</a></p>
+            	</div>
+			</div>
+			<div class="four columns">
+            	<div class="mod modPriceBox">
+              		<div class="info">
+                		<p class="level">Au forfait</p>
+                		<p class="desc">intervention régulière</p>
+                		<p class="price">
+                  			<span class="number">411</span>
+                  			<span class="dollar">€</span>
+                  			<br/>
+                  			pour 1/2 journée par semaine pendant 4 semaines
+                		</p>
+              		</div>
+              		<div class="features">
+	                	<ul>
+							<li>1/2 journée par semaine pendant 4 semaines : 411€</li>
+							<li>1 journée par semaine pendant 4 semaines : 703€</li>
+	                	</ul>
+					</div>
+              		<p class="start"><a class="button" href="#{env['root.path']}/contact">Demander un devis</a></p>
+            	</div>
+			</div>
+		</div>
+        <div class="spacing"></div>
+        <div class="row">
+			<div class="twelve columns">
+				<div class="mod modSectionHeader">
+					<h2>Conditions</h2>
+				</div>
+			</div>
+        </div>
+        <div class="row">
+			<div class="six columns">
+            	<h3>Tarifs</h3>
+            	<p>
+            		Ces tarifs ne remplacent pas un devis, ils sont donnés à titre indicatif et sont hors déplacement et fournitures spécifiques.<br/>
+					Sous réserve de disponibilité : Intervention rapide (sous 24 heures) : +25%. Dimanche et jours fériés : + 50%.
+				</p>
+            	<div class="spacing"></div>
+            	<h3>Temps de travail</h3>
+            	<p>
+            		1/2 journée = 4 h, Journée = 7 h. Possibilité de forfait pour intervention régulière.
+				</p>
+			</div>
+			<div class="six columns">
+				<h3>Deplacements</h3>
+				<p>
+					Aller-retour inférieur à 10 kms forfait de 6 €.<br/>
+					Au-delà de 10 kms AR barème fiscal en vigueur : 0.491 / km<br/>
+					Conduite de votre véhicule : 20 € / heure (possibilité de forfait)<br/>
+					&#160;<br/>
+				</p>
+				<div class="spacing"></div>
+				<h3>Paiements</h3>
+				<p>30% d’acompte demandés à la signature de la commande, paiement par chèque, virement bancaire ou espèces contre reçu</p>
+			</div>
+        </div>
+	</ui:define>
+</ui:composition>
+</html>

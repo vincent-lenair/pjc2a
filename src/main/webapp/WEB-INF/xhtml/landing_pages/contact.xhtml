@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="/WEB-INF/xhtml/template/commun.xhtml">
+	<ui:param name="pageTitle" value="Me contacter"/>
+	<ui:param name="pageType" value="CONTACT"/>
+	<ui:define name="main">
+		<div class="row">
+			<div class="six columns">
+				<div class="mod modContactForm">
+					<h:form prependId="false">
+						<ui:fragment rendered="#{not contactBean.sendSucces and not contactBean.sendError}">
+							<p>
+		                		<label for="name">Votre Nom</label>
+		                		<h:inputText styleClass="input-text required #{contactBean.errorName ? 'error' : ''}" id="name" value="#{contactBean.contactName}"/>
+		                		<h:outputLabel for="name" generated="true" styleClass="error" rendered="#{contactBean.errorName}">Ce champ est obligatoire.</h:outputLabel>
+		              		</p>
+		              		<p>
+		                		<label for="email">Votre Email</label>
+		                		<h:inputText styleClass="input-text required #{contactBean.errorMail ? 'error' : ''}" id="email" value="#{contactBean.contactMail}"/>
+		                		<h:outputLabel for="name" generated="true" styleClass="error" rendered="#{contactBean.errorName}">Ce champ est obligatoire.</h:outputLabel>
+		              		</p>
+		              		<p>
+		                		<label for="subject">Objet</label>
+		                		<h:inputText styleClass="input-text" id="subject" value="#{contactBean.subject}"/>
+		              		</p>
+		              		<p>
+		                		<label for="message">Votre Message</label>
+		                		<h:inputTextarea styleClass="required #{contactBean.errorMessage ? 'error' : ''}" rows="5" cols="80" id="message"  value="#{contactBean.message}"/>
+		                		<h:outputLabel for="message" generated="true" styleClass="error" rendered="#{contactBean.errorMessage}">Ce champ est obligatoire.</h:outputLabel>
+		              		</p>
+		              		<p>
+		                		<h:commandButton styleClass="button" value="Envoyer">
+		                			<f:ajax listener="#{contactController.sendMail}" execute="@form" render="@form"/>
+		                		</h:commandButton>
+		              		</p>
+	              		</ui:fragment>
+	              		<ui:fragment rendered="#{contactBean.sendSucces}">
+			              	<p class="thanks">
+			                	Merci pour votre message, votre demande a bien été prise en compte.
+			              	</p>
+	              		</ui:fragment>
+	              		<ui:fragment rendered="#{contactBean.sendError}">
+			              	<p class="thanks">
+			                	Une erreur s'est produite, merci de <h:commandLink actionListener="#{contactController.retry}">réessayer</h:commandLink> plus tard.
+			              	</p>
+	              		</ui:fragment>
+					</h:form>
+	            </div>
+			</div>
+			<div class="six columns">
+				<div class="mod modContactInfo">
+					<ul class="contacts">
+						<li>
+	                  		<i class="icon-location"></i>
+	                  		<span>56300 Pontivy, Morbihan</span>
+	                	</li>
+	                	<li>
+	                  		<i class="icon-mail"></i>
+	                  		<span><a href="mailto:#{appBean.mailAdress}">#{appBean.mailAdress}</a></span>
+	                	</li>
+	                	<li>
+	                  		<i class="icon-phone"></i>
+	                 		<span>#{appBean.phoneNumber}</span>
+	                	</li>
+	                	<li>
+	                  		<i class="icon-clock"></i>
+	                 		<span>Du lundi au vendredi : 8h30 - 20h</span>
+	                 		<br/>
+	                 		<span>Le samedi : 9h - 12h</span>
+	                	</li>
+	              	</ul>
+	              	<div class="gmap" data-lat="48.065555" data-lng="-2.968606" data-zoom="8"></div>
+	            </div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,42 @@
+<pretty-config xmlns="http://ocpsoft.com/prettyfaces/3.2.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ocpsoft.com/prettyfaces/3.2.0 http://ocpsoft.com/xml/ns/prettyfaces/ocpsoft-pretty-faces-3.2.0.xsd">
+
+
+	<url-mapping id="accueil">
+		<pattern value="/"></pattern>
+		<view-id value="/accueil.xhtml"></view-id>
+	</url-mapping>
+	
+	<url-mapping id="quisuisje">
+		<pattern value="/about"></pattern>
+		<view-id value="/WEB-INF/xhtml/landing_pages/quisuisje.xhtml"></view-id>
+	</url-mapping>
+	
+	<url-mapping id="contact">
+		<pattern value="/contact"></pattern>
+		<view-id value="/WEB-INF/xhtml/landing_pages/contact.xhtml"></view-id>
+	</url-mapping>
+	
+	<url-mapping id="tarifs">
+		<pattern value="/tarifs"></pattern>
+		<view-id value="/WEB-INF/xhtml/landing_pages/tarifs.xhtml"></view-id>
+	</url-mapping>
+	
+	<url-mapping id="oups">
+		<pattern value="/oups"></pattern>
+		<view-id value="/WEB-INF/xhtml/landing_pages/404.xhtml"></view-id>
+	</url-mapping>
+	
+	<url-mapping id="services_particuliers">
+		<pattern value="/services/particuliers"></pattern>
+		<view-id value="/WEB-INF/xhtml/landing_pages/services/particuliers.xhtml"></view-id>
+	</url-mapping>
+	
+	<url-mapping id="services_professionnels">
+		<pattern value="/services/professionnels"></pattern>
+		<view-id value="/WEB-INF/xhtml/landing_pages/services/professionnels.xhtml"></view-id>
+	</url-mapping>
+
+
+</pretty-config>

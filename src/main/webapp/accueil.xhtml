@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:composition template="/WEB-INF/xhtml/template/commun.xhtml">
+	<ui:param name="pageTitle" value="Accueil"/>
+	<ui:param name="pageType" value="ACCUEIL"/>
+	<ui:define name="main">
+		<div class="row">
+			<div class="twelve columns">
+	            <div class="mod modSectionHeader" data-connectors="1">
+	            	<h2>Bienvenue</h2>
+	            </div>
+          	</div>
+        </div>
+		<div class="row">
+			<div class="twelve columns">
+	            <p>
+	            	Bienvenue chez PJ-C2A votre centre de conseil et d’assistance en organisation administrative.
+	            	Riche d’une expérience professionnelle solide, je propose <a href="#{env['root.path']}/services/professionnels">aux professionnels</a> et <a href="#{env['root.path']}/services/particuliers">aux particuliers</a> des prestations sur mesure, un travail à la carte selon les besoins et les budgets.
+					Pour mettre de l’ordre dans vos papiers, vous aider dans vos démarches, vous assister dans l’organisation de votre entreprise , je vous propose des conseils et un accompagnement par des interventions sur site ou à distance avec professionnalisme, efficacité, flexibilité et discrétion en vous garantissant un <a href="#{env['root.path']}/tarifs">coût maîtrisé</a>, sans embauche et sans charge.
+					Au delà des prestations ponctuelles ou régulières que je vous propose, ma volonté est de me positionner en véritable partenaire de votre quotidien ou de votre entreprise.
+					<a href="#{env['root.path']}/contact">Contactez-moi</a> et trouvons ensemble une solution adaptée à vos attentes.
+	            </p>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
