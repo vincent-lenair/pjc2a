@@ -1,0 +1,21 @@
+{% extends 'layout/base.html.twig' %}
+{% block title %}Accueil{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="twelve columns">
+            <div class="mod modSectionHeader" data-connectors="1">
+                <h2>Bienvenue</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <p>
+                Et si j’osais les marchés publics ?<br/><br/>
+                Le Cabinet PJ-C2A propose aux artisans, commerçants, TPE/PME... <a href="{{path('pjc2a_marches_accompagnement')}}">accompagnement</a>, <a href="{{path('pjc2a_marches_conseil')}}">conseil</a> et <a href="{{path('pjc2a_marches_formation')}}">formation</a> pour répondre aux problématiques liées aux marchés publics. Autant de solutions pour accéder à la commande publique, mieux l’appréhender et optimiser vos chances de réussite.<br/><br/>
+                Parce que mon objectif est d’aider les professionnels à gagner en compétitivité, l’offre de prestations comprend également un service d’aide à la comptabilité et un service de <a href="{{path('pjc2a_secretariat_professionnels')}}">secrétariat</a>. Je vous garantis professionnalisme, discrétion et <a href="{{path('pjc2a_tarifs')}}">coût maitrisé</a>. J’interviens sur site ou en externalisé, de façon ponctuelle ou régulière.
+                <a href="{{path('pjc2a_contact')}}">Contactez-moi</a> et trouvons ensemble la solution la plus adaptée à vos attentes
+            </p>
+        </div>
+    </div>
+{% endblock %}

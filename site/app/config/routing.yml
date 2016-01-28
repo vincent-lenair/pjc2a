@@ -1,0 +1,70 @@
+pjc2a_accueil:
+    path: "/"
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        pageType: "accueil"
+        template: "pages/accueil.html.twig"
+    methods: ["GET"]
+
+pjc2a_about:
+    path: "about"
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        pageType: "about"
+        template: "pages/about.html.twig"
+    methods: ["GET"]
+
+pjc2a_marches_conseil:
+    path: "marchespublics/conseil"
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        pageType: "marches"
+        template: "pages/marches_conseil.html.twig"
+    methods: ["GET"]
+
+pjc2a_marches_accompagnement:
+    path: "marchespublics/accompagnement"
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        pageType: "marches"
+        template: "pages/marches_accompagnement.html.twig"
+    methods: ["GET"]
+
+pjc2a_marches_formation:
+    path: "marchespublics/formation"
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        pageType: "marches"
+        template: "pages/marches_formation.html.twig"
+    methods: ["GET"]
+
+pjc2a_secretariat_particuliers:
+    path: "secretariat/particuliers"
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        pageType: "secretariat"
+        template: "pages/secretariat_particuliers.html.twig"
+    methods: ["GET"]
+
+pjc2a_secretariat_professionnels:
+    path: "secretariat/professionnels"
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        pageType: "secretariat"
+        template: "pages/secretariat_professionnels.html.twig"
+    methods: ["GET"]
+
+pjc2a_tarifs:
+    path: "tarifs"
+    defaults:
+        _controller: "FrameworkBundle:Template:template"
+        pageType: "tarifs"
+        template: "pages/tarifs.html.twig"
+    methods: ["GET"]
+
+pjc2a_contact:
+    path: "contact"
+    defaults:
+        _controller: "AppBundle:Default:contact"
+        pageType: "contact"
+    methods: ["GET", "POST"]

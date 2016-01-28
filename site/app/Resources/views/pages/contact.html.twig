@@ -1,0 +1,44 @@
+{% extends 'layout/base.html.twig' %}
+{% block title %}Me contacter{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="six columns">
+            <div class="mod modContactForm">
+                {% for flashMessage in app.session.flashbag.get('success') %}
+                    <div class="flash-notice">
+                        {{ flashMessage }}
+                    </div>
+                {% endfor %}
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <p><input class="button" value="Envoyer" type="submit"></p>
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <div class="six columns">
+            <div class="mod modContactInfo">
+                <ul class="contacts">
+                    <li>
+                        <i class="icon-location"></i>
+                        <span>56300 Pontivy, Morbihan</span>
+                    </li>
+                    <li>
+                        <i class="icon-mail"></i>
+                        <span><a href="mailto:pascale@pj-c2a.fr">pascale@pj-c2a.fr</a></span>
+                    </li>
+                    <li>
+                        <i class="icon-phone"></i>
+                        <span>07 52 62 03 17</span>
+                    </li>
+                    <li>
+                        <i class="icon-clock"></i>
+                        <span>Du lundi au vendredi : 8h30 - 20h</span>
+                        <br/>
+                        <span>Le samedi : 9h - 12h</span>
+                    </li>
+                </ul>
+                <div class="gmap" data-lat="48.065555" data-lng="-2.968606" data-zoom="8"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+<div class='mod modNav default'>
+    <div class='show-for-small'>
+        <a class="toggle" href="javascript:void(0);">Choisir une page</a>
+    </div>
+    <div class='wrapper'>
+        <ul class='nav-bar'>
+            <li>
+                <a class="main{{app.request.get('pageType') == 'accueil' ? ' current' : ''}}" href="{{path('pjc2a_accueil')}}">Accueil<span class="tail"></span></a>
+            </li>
+            <li>
+                <a class="main{{app.request.get('pageType') == 'about' ? ' current' : ''}}" href="{{path('pjc2a_about')}}">Qui suis je ?<span class="tail"></span></a>
+            </li>
+            <li>
+                <a class="main{{app.request.get('pageType') == 'marches' ? ' current' : ''}}" href="#">Marches publics<span class="tail"></span></a>
+                <div class='flyout'>
+                    <ul class='sub'>
+                        <li>
+                            <a href="{{path('pjc2a_marches_conseil')}}">Conseil</a>
+                        </li>
+                        <li>
+                            <a href="{{path('pjc2a_marches_accompagnement')}}">Accompagnement</a>
+                        </li>
+                        <li>
+                            <a href="{{path('pjc2a_marches_formation')}}">Formation</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="main{{app.request.get('pageType') == 'secretariat' ? ' current' : ''}}" href="#">Secretariat<span class="tail"></span></a>
+                <div class='flyout'>
+                    <ul class='sub'>
+                        <li>
+                            <a href="{{path('pjc2a_secretariat_particuliers')}}">Particuliers</a>
+                        </li>
+                        <li>
+                            <a href="{{path('pjc2a_secretariat_professionnels')}}">Professionnels</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="main{{app.request.get('pageType') == 'tarifs' ? ' current' : ''}}" href="{{path('pjc2a_tarifs')}}">Tarifs<span class="tail"></span></a>
+            </li>
+            <li>
+                <a class="main{{app.request.get('pageType') == 'contact' ? ' current' : ''}}" href="{{path('pjc2a_contact')}}">Contact<span class="tail"></span></a>
+            </li>
+        </ul>
+    </div>
+</div>
